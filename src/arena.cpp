@@ -26,16 +26,23 @@ Arena::Arena(const struct arena_params* const params) :
 void Arena::AdvanceTime(double dt) {
   if (dt == 0)
     return;
-  for (size_t i = 0; i < 1; ++i) {
-      //UpdateEntitiesTimestep();
-  } /* for(i..) */
+  for (auto ent : entities_) {
+      ent->TimestepUpdate(1);
+  } 
 } /* AdvanceTime() */
 
+void Arena::Reset(void) {
+  for (auto ent : entities_) {
+    ent->Reset();
+  } /* for(ent..) */
+  win_ = false;
+  lose_ = false;
+} /* reset() */
 
 Arena::~Arena(void) {
   for (auto ent : entities_) {
     delete ent;
-  } /* for(ent..) */
+  } 
 }
 
 std::vector<Obstacle*> Arena::obstacles(void) {

@@ -17,6 +17,11 @@ public:
      */
     void AdvanceTime(double dt);
 
+    /**
+     * @brief Reset all entities in the arena, effectively restarting the game.
+     */
+    void Reset(void);
+
     /*
     * @brief Get # of obstacles in the arena.
     */
