@@ -1,5 +1,10 @@
 # RobotSimulation
 
+## Libraries
+
+1. NanoGui: https://github.com/wjakob/nanogui
+2. NanoVG: https://github.com/memononen/nanovg
+
 ## Steps to build 
 
 1. git clone --recursive https://github.com/elainedo/RobotSimulation
