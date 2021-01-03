@@ -11,7 +11,8 @@
     BSD-style license that can be found in the LICENSE.txt file.
 */
 
-#include "simple_graphics.h"
+#include "graphics_arena_viewer.h"
+#include "arena_params.h"
 
 // Includes for the GLTexture class.
 #include <cstdint>
@@ -29,7 +30,13 @@ using std::to_string;
 int main(int /* argc */, char ** /* argv */) {
     try {
         nanogui::init();
-        nanogui::ref<SimpleGraphics> app = new SimpleGraphics(1024, 568, "Simulation");
+
+        arena_params aparams;
+
+        // Start up the graphics (which creates the arena).
+        // Run will enter the nanogui::mainloop()
+        GraphicsArenaViewer *app =
+            new GraphicsArenaViewer(&aparams);
         app->Run();
         nanogui::shutdown();
     } catch (const std::runtime_error &e) {
