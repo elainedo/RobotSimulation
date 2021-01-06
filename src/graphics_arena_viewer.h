@@ -90,6 +90,17 @@ public:
     void DrawObstacle(NVGcontext *ctx,
                                 const class Obstacle* const obstacle);
 
+    /**
+     * @brief Draw a player using nanogui.
+     *
+     * This function requires an active nanovg drawing context (ctx), so it should
+     * probably only be called from with \ref DrawUsingNanoVG().
+     *
+     * @param[in] ctx The nanogui context.
+     * @param[in] player The player handle.
+     */
+    void DrawPlayer(NVGcontext *ctx, const class Player* const player);
+
     Arena *arena_;
     bool paused_;
     nanogui::Button *pause_btn_;

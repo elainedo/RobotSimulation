@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include "arena_entity_params.h"
+#include "player_params.h"
 #include "position.h"
 #include "color.h"
 
@@ -20,6 +21,14 @@
 struct arena_params {
   arena_params(void) : obstacles(), n_obstacles(),
                         x_dim(), y_dim() {
+
+    player.battery_max_charge = 100.0;
+    player.angle_delta = 10;
+    player.collision_delta = 1;
+    player.radius = 20.0;
+    player.pos = Position(500, 500);
+    player.color = Color(0, 0, 255, 255); /* blue */
+
     obstacles[0].radius = 50.0;
     obstacles[0].pos = Position(800, 200);
     obstacles[0].color = Color(128, 0, 0, 255); /* maroon */
@@ -46,7 +55,9 @@ struct arena_params {
     y_dim = 768;
 }
 
+struct player_params player;
 struct arena_entity_params obstacles[MAX_OBSTACLES];
+
 size_t n_robots;
 size_t n_obstacles;
 int x_dim;

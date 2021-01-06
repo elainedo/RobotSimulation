@@ -33,6 +33,11 @@ public:
     std::vector<class Obstacle*> obstacles(void);
 
     /**
+     * @brief Get the player in the arena.
+     */
+    class Player* player(void) const { return player_; }
+
+    /**
      * @brief Get the state of the game if winning
      */
     bool win (void) { return win_; }
@@ -55,6 +60,8 @@ private:
     unsigned int n_robots_;
     unsigned int n_obstacles_;
 
+    // Entities
+    Player* player_;
     std::vector<class ArenaEntity*> entities_;
 
     // win_ and lose_ variables indicate the situation when robot hits HomeBase

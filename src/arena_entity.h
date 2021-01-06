@@ -1,3 +1,6 @@
+#ifndef ARENA_ENTITY_H
+#define ARENA_ENTITY_H
+
 #include <iostream>
 #include <string>
 #include "position.h"
@@ -76,3 +79,5 @@ private:
     Position pos_;
     Color color_;
 };
+
+#endif

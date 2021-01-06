@@ -3,6 +3,7 @@
 #include <vector>
 #include <sstream>
 
+#include "player.h"
 #include "obstacle.h"
 #include "arena_params.h"
 
@@ -95,6 +96,27 @@ void GraphicsArenaViewer::OnSpecialKeyDown(int key, int scancode,
  * Drawing of Entities in Arena
  ******************************************************************************/
 
+void GraphicsArenaViewer::DrawPlayer(NVGcontext *ctx, const Player* const player) {
+    nvgBeginPath(ctx);
+    nvgCircle(ctx, player->get_pos().x(), player->get_pos().y(),
+        player->radius());
+    nvgFillColor(ctx, nvgRGBA(static_cast<int>(player->get_color().r),
+                                static_cast<int>(player->get_color().g),
+                                static_cast<int>(player->get_color().b),
+                                255));
+    nvgFill(ctx);
+    nvgStrokeColor(ctx, nvgRGBA(0, 0, 0, 255));
+    nvgStroke(ctx);
+
+    nvgFillColor(ctx, nvgRGBA(0, 0, 0, 255));
+    nvgText(ctx, player->get_pos().x(), player->get_pos().y() - 10,
+            player->get_name().c_str(), NULL);
+    // std::stringstream battery;
+    // //battery << player->battery_level();
+    // nvgText(ctx, player->get_pos().x(), player->get_pos().y() + 10,
+    //         battery.str().c_str(), NULL);
+}
+
 
 void GraphicsArenaViewer::DrawObstacle(NVGcontext *ctx,
                                        const Obstacle* const obstacle) {
@@ -125,7 +147,9 @@ void GraphicsArenaViewer::DrawUsingNanoVG(NVGcontext *ctx) {
     std::vector<Obstacle*> obstacles = arena_->obstacles();
     for (size_t i = 0; i < obstacles.size(); i++) {
         DrawObstacle(ctx, obstacles[i]);
-    } /* for(i..) */
+    } 
+
+    DrawPlayer(ctx, arena_->player());
 }
 
 

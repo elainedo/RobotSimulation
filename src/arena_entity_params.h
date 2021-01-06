@@ -1,3 +1,6 @@
+#ifndef ARENA_ENTITY_PARAMS_H
+#define ARENA_ENTITY_PARAMS_H
+
 #include "position.h"
 #include "color.h"
 
@@ -13,3 +16,5 @@ struct arena_entity_params {
   Position pos;
   Color color;
 };
+
+#endif

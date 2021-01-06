@@ -5,6 +5,7 @@
 #include <cmath>
 
 #include "arena.h"
+#include "player.h"
 #include "obstacle.h"
 
 /*******************************************************************************
@@ -13,7 +14,8 @@
 Arena::Arena(const struct arena_params* const params) :
     x_dim_(params->x_dim), y_dim_(params->y_dim),
     n_robots_(params->n_robots),
-    n_obstacles_(params->n_obstacles) {
+    n_obstacles_(params->n_obstacles),
+    player_(new Player(&params->player)) {
 
     for (size_t i = 0; i < n_obstacles_; ++i) {
         entities_.push_back(new Obstacle(
