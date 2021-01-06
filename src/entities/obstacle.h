@@ -20,6 +20,8 @@ public:
         return "Obstacle" + std::to_string(id_);
     }
 
+    enum entity_types get_type() const override { return kObstacle; }
+
  private:
     static uint next_id_;
     int id_;

@@ -5,6 +5,7 @@
 #include <string>
 #include "../common/position.h"
 #include "../common/color.h"
+#include "entity_types.h"
 
 /*******************************************************************************
  * Class Definitions
@@ -73,6 +74,13 @@ class ArenaEntity {
      * @brief Get radius of the entity
      */
     double radius(void) const { return radius_; }
+
+    /**
+     * @brief Set type of this entity
+     */
+    virtual enum entity_types get_type() const {
+        return kEntity;
+    }
 
 private:
     double radius_;

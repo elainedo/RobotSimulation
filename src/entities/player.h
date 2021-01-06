@@ -35,6 +35,8 @@ public:
         return "Player" + std::to_string(id_);
     }
 
+    enum entity_types get_type() const override { return kPlayer; }
+
  private:
     static unsigned int next_id_;
 
