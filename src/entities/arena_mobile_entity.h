@@ -1,6 +1,6 @@
 #include <algorithm>
 #include "arena_entity.h"
-#include "color.h"
+#include "../common/color.h"
 
 class ArenaMobileEntity : public ArenaEntity {
 public:

@@ -1,7 +1,7 @@
 #include <cmath>
 #include <iostream>
 #include <vector>
-#include "arena_params.h"
+#include "../params/arena_params.h"
 
 struct arena_params;
 

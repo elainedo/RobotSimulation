@@ -3,8 +3,8 @@
 
 #include <iostream>
 #include <string>
-#include "position.h"
-#include "color.h"
+#include "../common/position.h"
+#include "../common/color.h"
 
 /*******************************************************************************
  * Class Definitions

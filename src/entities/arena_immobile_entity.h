@@ -1,6 +1,6 @@
 
-#include "arena_entity.h"
-#include "color.h"
+#include "../entities/arena_entity.h"
+#include "../common/color.h"
 
 /*******************************************************************************
  * Class Definitions

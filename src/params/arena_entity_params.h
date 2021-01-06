@@ -1,8 +1,8 @@
 #ifndef ARENA_ENTITY_PARAMS_H
 #define ARENA_ENTITY_PARAMS_H
 
-#include "position.h"
-#include "color.h"
+#include "../common/position.h"
+#include "../common/color.h"
 
 /*******************************************************************************
  * Structure Definitions

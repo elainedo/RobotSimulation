@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 #include "arena_mobile_entity.h"
-#include "player_params.h"
+#include "../params/player_params.h"
 
 /*******************************************************************************
  * Class Definitions

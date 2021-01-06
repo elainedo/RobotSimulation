@@ -5,8 +5,8 @@
 #include <cmath>
 
 #include "arena.h"
-#include "player.h"
-#include "obstacle.h"
+#include "../entities/player.h"
+#include "../entities/obstacle.h"
 
 /*******************************************************************************
  * Constructors/Destructor

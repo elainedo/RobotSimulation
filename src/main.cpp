@@ -11,8 +11,8 @@
     BSD-style license that can be found in the LICENSE.txt file.
 */
 
-#include "graphics_arena_viewer.h"
-#include "arena_params.h"
+#include "graphics/graphics_arena_viewer.h"
+#include "params/arena_params.h"
 
 // Includes for the GLTexture class.
 #include <cstdint>

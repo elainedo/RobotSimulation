@@ -3,9 +3,9 @@
 #include <vector>
 #include <sstream>
 
-#include "player.h"
-#include "obstacle.h"
-#include "arena_params.h"
+#include "../entities/player.h"
+#include "../entities/obstacle.h"
+#include "../params/arena_params.h"
 
 #include "graphics_arena_viewer.h"
 

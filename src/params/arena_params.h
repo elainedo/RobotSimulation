@@ -4,8 +4,8 @@
 #include <stdio.h>
 #include "arena_entity_params.h"
 #include "player_params.h"
-#include "position.h"
-#include "color.h"
+#include "../common/position.h"
+#include "../common/color.h"
 
 #define MAX_OBSTACLES 8
 #define MAX_ROBOTS 8

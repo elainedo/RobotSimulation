@@ -3,7 +3,7 @@
  ******************************************************************************/
 #include <string>
 #include "arena_immobile_entity.h"
-#include "color.h"
+#include "../common/color.h"
 
 /*******************************************************************************
  * Class Definitions
