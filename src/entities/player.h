@@ -31,6 +31,22 @@ public:
      */
     void TimestepUpdate(uint dt) override;
 
+    double get_heading_angle(void) const override {
+        return 0;
+    }
+
+    void set_heading_angle(double ha) override {
+        
+    }
+
+    double get_speed(void) const override {
+        return 0;
+    }
+    
+    void set_speed(double sp) override {
+        
+    }
+
     std::string get_name(void) const override {
         return "Player" + std::to_string(id_);
     }

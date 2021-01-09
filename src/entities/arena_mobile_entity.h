@@ -11,10 +11,39 @@ public:
             last_pos_(pos) {}
 
     /**
-     * @brief Perform whatever updates are needed for a particular entity after 1
-     * timestep (updating position, changing color, etc.).
+     * @brief Get the current heading angle for the entity.
      */
-    virtual void TimestepUpdate(__unused uint dt) override {}
+    virtual double get_heading_angle(void) const = 0;
+
+    /**
+     * @brief Set the new heading angle for the entity.
+     *
+     * This should only be called by a dedicated motion handler class, and only
+     * from within \ref Timestepupdate().
+     */
+    virtual void set_heading_angle(double heading_angle) = 0;
+
+    /**
+     * @brief Get the current speed of an arena entity.
+     */
+    virtual double get_speed(void) const = 0;
+
+    /**
+     * @brief Set the new speed of an entity.
+     *
+     * This should only be called by a dedicated motion handler class, and only
+     * from within \ref Timestepupdate().
+     */
+    virtual void set_speed(double sp) = 0;
+
+    /**
+     * @brief Update an entity's position and velocity after the specified # of
+     * timesteps has elapsed.
+     *
+     * @param dt The # of timesteps that has elapsed since the last time
+     * position/velocity were updated.
+     */
+    virtual void TimestepUpdate(uint dt) override {}
 
     /**
      * @brief Get the minimum distance between two arena entities that will be
