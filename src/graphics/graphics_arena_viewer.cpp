@@ -6,6 +6,7 @@
 #include "../entities/player.h"
 #include "../entities/obstacle.h"
 #include "../params/arena_params.h"
+#include "../events/event_key_press.h"
 
 #include "graphics_arena_viewer.h"
 
@@ -88,8 +89,8 @@ void GraphicsArenaViewer::OnSpecialKeyDown(int key, int scancode,
     int modifiers) {
     (void) scancode;  // compiler will see this as used variable;
     (void) modifiers;
-    // EventKeypress e(key);
-    // arena_->Accept(&e);
+    EventKeypress e(key);
+    arena_->Accept(&e);
 }
 
 /*******************************************************************************

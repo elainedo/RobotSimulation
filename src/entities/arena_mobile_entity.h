@@ -1,3 +1,6 @@
+#ifndef ARENA_MOBILE_ENTITY_H
+#define ARENA_MOBILE_ENTITY_H
+
 #include <algorithm>
 #include "arena_entity.h"
 #include "../common/color.h"
@@ -68,3 +71,5 @@ private:
     double collision_delta_;
     Position last_pos_;
 };
+
+#endif

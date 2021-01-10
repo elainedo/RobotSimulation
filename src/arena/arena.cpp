@@ -15,14 +15,20 @@ Arena::Arena(const struct arena_params* const params) :
     x_dim_(params->x_dim), y_dim_(params->y_dim),
     n_robots_(params->n_robots),
     n_obstacles_(params->n_obstacles),
-    player_(new Player(&params->player)) {
+    player_(new Player(&params->player)),
+    entities_(),
+    mobile_entities_() {
 
     for (size_t i = 0; i < n_obstacles_; ++i) {
         entities_.push_back(new Obstacle(
             params->obstacles[i].radius,
             params->obstacles[i].pos,
             params->obstacles[i].color));
-    } /* for(i..) */
+  } /* for(i..) */
+
+  entities_.push_back(player_);
+  mobile_entities_.push_back(player_);
+  player_->set_heading_angle(37);
 }
 
 void Arena::AdvanceTime(double dt) {
@@ -32,6 +38,12 @@ void Arena::AdvanceTime(double dt) {
       ent->TimestepUpdate(1);
   } 
 } /* AdvanceTime() */
+
+
+void Arena::Accept(const __unused EventKeypress * const e) {
+    player_->AcceptCommand(e->get_cmd());
+} /* changes functionality of player when user presses special keys*/
+
 
 void Arena::Reset(void) {
   for (auto ent : entities_) {

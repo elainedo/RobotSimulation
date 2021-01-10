@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include "../params/arena_params.h"
+#include "../events/event_key_press.h"
 
 struct arena_params;
 
@@ -16,6 +17,14 @@ public:
      * @param[in] dt The # of steps to increment by.
      */
     void AdvanceTime(double dt);
+
+    /**
+     * @brief Handle the key press passed along by the viewer.
+     *
+     * @param[in] an event holding the key press.
+     *
+     */
+    void Accept(const EventKeypress * const e);
 
     /**
      * @brief Reset all entities in the arena, effectively restarting the game.
@@ -63,6 +72,7 @@ private:
     // Entities
     Player* player_;
     std::vector<class ArenaEntity*> entities_;
+    std::vector<class ArenaMobileEntity*> mobile_entities_;
 
     // win_ and lose_ variables indicate the situation when robot hits HomeBase
     // runs out of battery
