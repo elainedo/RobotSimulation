@@ -73,7 +73,7 @@ void GraphicsArenaViewer::UpdateSimulation(double dt) {
 void GraphicsArenaViewer::OnRestartBtnPressed() {
     game_win_window_->setVisible(false);
     game_lose_window_->setVisible(false);
-    //arena_->Reset();
+    arena_->Reset();
 }
 
 void GraphicsArenaViewer::OnPauseBtnPressed() {
