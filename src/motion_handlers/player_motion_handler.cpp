@@ -49,8 +49,8 @@ void PlayerMotionHandler::UpdateVelocity(std::vector<class Sensor*> sensors) {
         if (sensor->get_type() == kSensorTouch) {
             if (sensor->activated()) {
                 if (sensor->get_entity_type() == kSuperBot) {
-                set_speed(0);
-                time_to_unfreeze = 30;
+                    set_speed(0);
+                    time_to_unfreeze = 30;
                 }
             }
             if (sensor->activated()) {
